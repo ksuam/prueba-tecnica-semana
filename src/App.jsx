@@ -4,7 +4,9 @@ import { AuthProvider, useAuth } from './context/AuthContext';
 
 
 import Home from './pages/Home';
-
+import PostDetail from './pages/PostDetail';
+import Login from './pages/Login';
+import Navbar from './components/Navbar';
 
 
 const PrivateRoute = ({ children }) => {
@@ -18,10 +20,12 @@ function App() {
       <AuthProvider>
         <Router>
           <div className="min-h-screen bg-gray-50">
-            
+          <Navbar />
             <Routes>
               {/* Rutas Públicas */}
               <Route path="/" element={<Home />} />
+              <Route path="/post/:id" element={<PostDetail />} />
+              <Route path="/login" element={<Login />} />
 
 
 

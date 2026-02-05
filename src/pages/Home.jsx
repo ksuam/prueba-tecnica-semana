@@ -37,11 +37,9 @@ const Home = () => {
     
     try {
       let data;
-      if (userId === 'all') {
-        // Forzamos la carga de todos los posts
+      if (userId === 'all') {    
         data = await blogService.getPosts();
       } else {
-        // Carga posts por ID de usuario/autor
         data = await blogService.getPostsByUser(userId);
       }
       setPosts(data.posts);
