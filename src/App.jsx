@@ -7,6 +7,8 @@ import Home from './pages/Home';
 import PostDetail from './pages/PostDetail';
 import Login from './pages/Login';
 import Navbar from './components/Navbar';
+import UsersDirectory from './pages/UsersDirectory';
+
 
 
 const PrivateRoute = ({ children }) => {
@@ -20,13 +22,22 @@ function App() {
       <AuthProvider>
         <Router>
           <div className="min-h-screen bg-gray-50">
-          <Navbar />
+            <Navbar />
             <Routes>
               {/* Rutas Públicas */}
               <Route path="/" element={<Home />} />
               <Route path="/post/:id" element={<PostDetail />} />
               <Route path="/login" element={<Login />} />
 
+              {/* Rutas Protegidas */}
+              <Route
+                path="/users"
+                element={
+                  <PrivateRoute>
+                    <UsersDirectory />
+                  </PrivateRoute>
+                }
+              />
 
 
             </Routes>
