@@ -52,6 +52,7 @@ La interfaz fue diseñada siguiendo principios de **Minimalismo Moderno**
    ```bash
    git clone https://github.com/ksuam/prueba-tecnica-semana.git
    cd prueba-tecnica-semana
+   git checkout master
 2. **Instalar dependencias:**
    ```bash
    npm i
